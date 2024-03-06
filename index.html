@@ -97,17 +97,11 @@
       
         <p>今年 QLogger 进行了一些不错的改进，从某种线程到完整的多线程支持。上个月，它从紧密配置变为完整配置。曾经只能选择日志级别，现在您可以配置很多不同的东西，包括输出类型。</p>
 <h2 id="QLogger的使用方法"><a href="#QLogger的使用方法" class="headerlink" title="QLogger的使用方法"></a>QLogger的使用方法</h2><h3 id="QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例："><a href="#QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：" class="headerlink" title="QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例："></a>QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QLoggerManager::getInstance();</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止："><a href="#之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止：" class="headerlink" title="之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止："></a>之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const auto logger = QLoggerManager::getInstance();</span><br><span class="line">logger-&gt;pause();</span><br><span class="line">logger-&gt;resume();</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="QLogger-的工作方式是添加模块（至少一个）和要打印的文件。这是最简单的场景，能够通过传递模块列表来添加在同一文件中打印的多个模块。或者通过一一添加目的地来分割打印可变数量模块的文件。"><a href="#QLogger-的工作方式是添加模块（至少一个）和要打印的文件。这是最简单的场景，能够通过传递模块列表来添加在同一文件中打印的多个模块。或者通过一一添加目的地来分割打印可变数量模块的文件。" class="headerlink" title="QLogger 的工作方式是添加模块（至少一个）和要打印的文件。这是最简单的场景，能够通过传递模块列表来添加在同一文件中打印的多个模块。或者通过一一添加目的地来分割打印可变数量模块的文件。"></a>QLogger 的工作方式是添加模块（至少一个）和要打印的文件。这是最简单的场景，能够通过传递模块列表来添加在同一文件中打印的多个模块。或者通过一一添加目的地来分割打印可变数量模块的文件。</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const auto logger = QLoggerManager::getInstance();</span><br><span class="line">logger-&gt;addDestination(<span class="string">&quot;myLog.log&quot;</span>, <span class="string">&quot;UI&quot;</span>);</span><br><span class="line">logger-&gt;addDestination(<span class="string">&quot;myOtherLog.log&quot;</span>, &#123;<span class="string">&quot;Network&quot;</span>, <span class="string">&quot;DB&quot;</span>&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>使用 QLogger 记录日志<br>使用 QLogger 进行记录的更简单方法是使用预定义的方法。它们使用以下 7 个级别中的所需级别自动记录消息：</p>
-<p>QLog_Trace<br>QLog_调试<br>QLog_信息<br>QLog_警告<br>QLog_Error<br>QLog_Fatal</p>
-<h3 id="用法如下："><a href="#用法如下：" class="headerlink" title="用法如下："></a>用法如下：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QLog_Info(<span class="string">&quot;UI&quot;</span>, QString(<span class="string">&quot;Executing the command: &#123;%1&#125;&quot;</span>).arg(cmd));</span><br></pre></td></tr></table></figure>
-
+        
+          <p class="article-more-link">
+            <a href="/2024/02/24/qt&Boost.asio/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">

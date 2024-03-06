@@ -6,15 +6,15 @@
   
   <title>QLogger：Qt 多线程记录器 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="今年 QLogger 进行了一些不错的改进，从某种线程到完整的多线程支持。上个月，它从紧密配置变为完整配置。曾经只能选择日志级别，现在您可以配置很多不同的东西，包括输出类型。 QLogger的使用方法QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：1QLoggerManager::getInstance();   之后，可以">
+  <meta name="description" content="今年 QLogger 进行了一些不错的改进，从某种线程到完整的多线程支持。上个月，它从紧密配置变为完整配置。曾经只能选择日志级别，现在您可以配置很多不同的东西，包括输出类型。 QLogger的使用方法QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：1QLoggerManager::getInstance();">
 <meta property="og:type" content="article">
 <meta property="og:title" content="QLogger：Qt 多线程记录器">
 <meta property="og:url" content="http://example.com/2024/02/24/qt&Boost.asio/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="今年 QLogger 进行了一些不错的改进，从某种线程到完整的多线程支持。上个月，它从紧密配置变为完整配置。曾经只能选择日志级别，现在您可以配置很多不同的东西，包括输出类型。 QLogger的使用方法QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：1QLoggerManager::getInstance();   之后，可以">
+<meta property="og:description" content="今年 QLogger 进行了一些不错的改进，从某种线程到完整的多线程支持。上个月，它从紧密配置变为完整配置。曾经只能选择日志级别，现在您可以配置很多不同的东西，包括输出类型。 QLogger的使用方法QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：1QLoggerManager::getInstance();">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-02-24T07:15:58.734Z">
-<meta property="article:modified_time" content="2024-03-06T15:32:52.105Z">
+<meta property="article:modified_time" content="2024-03-06T15:34:33.517Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Qt">
 <meta name="twitter:card" content="summary">
@@ -100,7 +100,7 @@
       
         <p>今年 QLogger 进行了一些不错的改进，从某种线程到完整的多线程支持。上个月，它从紧密配置变为完整配置。曾经只能选择日志级别，现在您可以配置很多不同的东西，包括输出类型。</p>
 <h2 id="QLogger的使用方法"><a href="#QLogger的使用方法" class="headerlink" title="QLogger的使用方法"></a>QLogger的使用方法</h2><h3 id="QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例："><a href="#QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：" class="headerlink" title="QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例："></a>QLogger的初始化与之前一样。它仍然遵循单例模式和相同的签名。如果实例不存在，以下行将创建该实例，否则将检索现有实例：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QLoggerManager::getInstance();</span><br></pre></td></tr></table></figure>
-
+<span id="more"></span>
 
 <h3 id="之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止："><a href="#之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止：" class="headerlink" title="之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止："></a>之后，可以选择暂停它，这样它就不会打印任何消息，直到您恢复为止：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const auto logger = QLoggerManager::getInstance();</span><br><span class="line">logger-&gt;pause();</span><br><span class="line">logger-&gt;resume();</span><br></pre></td></tr></table></figure>
 
